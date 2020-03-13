@@ -1,0 +1,39 @@
+﻿@model List<MVCCrudNet.Models.ViewModels.ListTabla2ViewModel>
+@{
+    ViewBag.Title = "Mis Datos";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row" style="text-align:right; padding:5px;">
+    <a href="~/Tabla2/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+<div class="row">
+    
+    <div class=" col-md-12">
+        <table class=" table">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th></th>
+                
+            </tr>
+            @foreach(var oElemento in Model)
+            { 
+                 <tr>
+
+                    <td>@oElemento.Id</td>
+                    <td>@oElemento.Nombre</td>
+                    <td>@oElemento.Correo</td>
+                    <td>
+                     <a href="~/Tabla2/Editar/@oElemento.Id" class= "btn btn-default"> Editar </a>
+                     <a href="~/Tabla2/Eliminar/@oElemento.Id" class="btn btn-danger"> Eliminar </a>
+                    </td>
+                 </tr>
+                }
+        </table>
+
+    </div>     
+
+</div>
+
